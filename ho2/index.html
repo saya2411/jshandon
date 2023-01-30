@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1 style="text-align: center;">Assignment2 Decision Making</h1>
+   <h4>Calculator</h4> 
+   <pre>
+    const Calculator = (A, B, C) => 
+    {
+        switch(A){
+        case '+': 
+        return (B+C);
+          case '-': 
+          return (B-C);
+          case '*': 
+          return (B*C);
+          case '/': 
+          return (B/C);
+        } 
+    };
+   </pre>
+   <h4>Check whether the condition is fulfilled or not?</h4> 
+   <pre>
+    const Check_divisibility = (N) => {
+        if (N%6===0 && N%9===0){
+          return "Divisible by both"
+        }
+        
+        else{
+          return " Not Divisible by both"
+        }  
+    };
+   </pre>
+   <h4>Eligible Voter</h4> 
+   <pre>
+    const isEligible = (a) => {
+        if (a>=18){
+          return "Eligible for Voting"
+        }
+        else{
+          return "Not Eligible for Voting"
+        }
+      };      
+   </pre>
+   <h4>Find Relation</h4> 
+   <pre>
+    const findRelation = (x,y) => {
+        if (x < y){
+          return x + " is smaller than " + y;
+        }
+        
+        else if (x > y){
+          return x +" is greater than "+ y;
+        }
+        
+        else if (x === y){
+          return x +" is equal to " + y;
+        }
+        
+      };
+   </pre>
+   <h4>Find Grades</h4> 
+   <pre>
+    const findGrades = (a) => {
+        if (a <= 10){
+          return "E";
+        }
+        else if (a >= 11 && a <= 20){
+          return "D";
+        }
+        else if (a >= 21 && a <= 30){
+          return "C";
+        }
+        else if (a >= 31 && a <= 40){
+          return "B";
+        }
+        else if (a >= 41 && a <= 50){
+          return "A";
+        }
+        
+    };
+   </pre>
+   <h4>Get Value</h4> 
+   <pre>
+    const getValue = (a) => {
+        if ((a==="p") || (a=="P")){
+            return "PrepBytes";
+        }
+        else if ((a==="z") || (a==="Z")){
+            return "Zenith";
+        }
+        else if ((a==="e") || (a==="E")){
+            return "Expert Coder";
+        }
+        else if ((a==="d") || (a==="D")){
+            return "Data Structure";
+        }
+    };
+   </pre>
+   <h4>Find the maximum out of three numbers.</h4> 
+   <pre>
+    const Max_out_of_three = (A,B,C) => {
+        if ((A > B) && (A > C)){
+          return A;
+        }
+        else if ((B > A) && (B > C)){
+          return B;
+        }
+        else if ((C > B) && (C > A)){
+          return C;
+        }
+        else {
+          return -1;
+        }
+    };
+   </pre>
+   <h4>Second Smallest</h4> 
+   <pre>
+    const findSndSmallest = (x,y,z) => {
+        if ((y>x && x>z) || (x>y && z>x)){
+          return x;
+        }
+        else if ((x>y && y>z) || (y>x && z>y )){
+          return y;
+        }
+        else if ((x>z && z>y) || (z>x && y>z )){
+          return z;
+        }
+      };
+   </pre>
+   <h4>Check whether the triangle is Acute or Obtuse</h4> 
+   <pre>
+    const Triangle_Check = (A,B,C) => {
+        if (A<90 && B<90 && C<90)
+      {
+        return "acute";
+      }
+      else 
+      {
+        return "obtuse";
+      }
+      };
+   </pre>
+</body>
+</html>
