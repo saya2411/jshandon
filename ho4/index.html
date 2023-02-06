@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Assignment4- Arrays</h1>
+    <h3>Find the Product.</h3>
+    <pre>
+    const Find_Prod = (array, N) => 
+    {
+    let prod=1;
+    for(let i=0; i< array.length; i++){
+        prod=prod*array[i];
+    }
+    return prod;
+    };
+    </pre>
+
+    <h3>Find the Sum.</h3>
+    <pre>
+    const Find_Sum = (array, N) => 
+    {
+      let sum=0;
+      for(let i=0;i< array.length;i++){
+        sum=sum+array[i];
+    }
+      return sum
+    
+    };
+    </pre>
+
+    <h3>Count Occurrences</h3>
+    <pre>
+        const findCount = (N, K, Arr) => 
+        {
+            let c=0;
+            for(let i=0;i< N;i++){
+            if(Arr[i]==K){
+              c++
+            }
+          }
+            return c;
+        };
+    </pre>
+
+
+    <h3>Even Odd</h3>
+    <pre>
+    const findEvenOdd = (N, Arr) => 
+    {
+    let B=[];
+    let counte=0,counto=0;
+    for(let i=0;i< N;i++){
+        if (Arr[i]%2===0){
+        counte=counte+Arr[i];
+        }
+        else{
+        counto=counto+Arr[i];
+        }
+    }
+    B.push(counte,counto);
+    return B;
+    };
+    </pre>
+
+
+    <h3>Find whether the number is present or not</h3>
+    <pre>
+        const Find_Num = (array,N,M) => 
+        {
+        let value;
+        for(let i=0;i< N;i++){
+            if(array[i]===M){
+            value= "YES";
+            break;
+            }
+            else{
+            value= "NO";
+            }
+        }
+        return value;
+        };
+    </pre>
+
+    <h3>Higher Age</h3>
+    <pre>
+        const highAge = (N, Arr) => 
+        {
+        let age = [];
+        let value;
+        for (let i=0; i<N; i++){
+            if(Arr[i] >= 18){
+            value = Arr[i];
+            age.push(value); 
+            }
+
+        }
+            
+        return age;
+        
+        };
+    </pre>
+
+
+    <h3>Increment the Array Elements</h3>
+    <pre>
+    const Inc_Arr = (array,N) => 
+    {
+    let incArray = [];
+    let value;
+    for(let i=0; i< N; i++){
+        value = array[i]+1;
+        incArray.push(value);
+    }
+    console.log(incArray.join(" "));
+    
+
+    };
+    </pre>
+    
+    <h3>Pass or Fail</h3>
+    <pre>
+        const isAllPass = (N, Arr) => 
+        {
+        let value;
+        for(let i=0; i< N; i++){
+            if(Arr[i] < 32){
+            value = "NO";
+            break;
+            }
+            else{
+            value = "YES";
+            }
+        }
+        return value;
+        };
+    </pre>
+
+    <h3>Unique Color Shirt</h3>
+    <pre>
+        function Unique_Shirts (arr,N) {
+            let M=0; //unique element
+            for(let i=0; i< N;i++){
+              let c=0;
+              let key=arr[i];
+              for (let j=0; j< N;j++){
+                if (key ==arr[j]){
+                  c++;
+                }
+              }
+              if (c === 1){
+                M++;
+              }
+            } 
+            return M;
+          }
+    </pre>
+
+
+    <h3>Min and Max</h3>
+    <pre>
+            function arrayMin(arr) {
+                let min = arr[0];
+                for(let i=0;i<arr.length;i++){
+                    if (arr[i] < min){
+                        min = arr[i];
+                    }
+                }
+                return min; 
+            }
+            
+            function arrayMax(arr) {
+                let max = arr[0];
+                for(let i=0;i< arr.length;i++){
+                    if (arr[i] > max){
+                        max = arr[i];
+                    }
+                }
+                return max;
+            }
+    </pre>
+
+    <h3>Birthday Game</h3>
+    <pre>
+        function Birthday_Game(arr,D ,M) {
+            let count=0;
+            let sum=0;
+            for(let i=0;i<= arr.length-M;i++){
+                sum=0;
+                for(let j=i;j< M;j++){
+                    sum=sum+arr[i+j];
+                }
+                
+                if(sum===D){
+                    count++;        
+                }
+            }
+            return count;
+        }
+    </pre>
+
+
+
+
+
+
+</body>
+</html>
