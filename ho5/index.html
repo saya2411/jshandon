@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Assignment5 Strings</h1>
+    <h2>Count Characters</h2> 
+    <pre>
+        const countCharacters = (S) => 
+        {
+          let B=[];
+          let countOfA=0, countOfD=0;
+            for (let i=0;i< S.length;i++){
+              if (S[i] === "A"){
+                countOfA++;
+              }
+              else if (S[i] === "D"){
+                countOfD++;
+              }
+            }
+            B.push(countOfA, countOfD);
+            return B;
+            
+        };
+         
+    </pre>
+
+    <h2>Count the Heads</h2> 
+    <pre>
+        var Count_Occ = (s) => 
+    {
+        let map=new Map();
+        map.set("a",0);
+        map.set("b",0);
+        map.set("c",0);
+        map.set("d",0);
+        map.set("e",0);
+        map.set("f",0);
+        map.set("g",0);
+        map.set("h",0);
+        map.set("i",0);
+        map.set("j",0);
+        map.set("k",0);
+        map.set("l",0);
+        map.set("m",0);
+        map.set("n",0);
+        map.set("o",0);
+        map.set("p",0);
+        map.set("q",0);
+        map.set("r",0);
+        map.set("s",0);
+        map.set("t",0);
+        map.set("u",0);
+        map.set("v",0);
+        map.set("w",0);
+        map.set("x",0);
+        map.set("y",0);
+        map.set("z",0);
+    
+        for(let i=0;i< s.length;i++){
+            let value=map.get(s[i]);
+            map.set(s[i],value+1);
+        }
+        let res="";
+        for(let [ch,freq] of map.entries()){
+            if(freq>1){
+                res=res+ch+""+freq;
+            }    
+        
+        }
+        return res;
+    };
+         
+    </pre>
+
+    <h2>Count the Vowels</h2> 
+    <pre>
+        var Count_Vowels= (S) => 
+        {
+            let vowelCount = 0;
+            S.toLowerCase();
+            for(let i=0;i< S.length;i++){
+                if(S[i]==="a" || S[i]==="e"|| S[i]==="i"|| S[i]==="o"||S[i]==="u"){
+                    vowelCount = vowelCount+1;
+                }
+            }
+            return vowelCount;
+        };
+         
+    </pre>
+
+    <h2>Concatenate the Strings</h2> 
+    <pre>
+        var Concatenate_Strings = (S1, S2) => 
+        {
+            let S3;
+            S3=S1+S2;
+            return S3;
+        };
+         
+    </pre>
+
+    <h2>Find Length</h2> 
+    <pre>
+        const findLength = (S) => 
+        {
+            let count=0;
+            for(let i=0;i< S.length;i++){
+                count=count+1;
+            }
+            return count;
+        };
+                
+    </pre>
+
+    <h2>Find the Winner</h2> 
+    <pre>
+        var Game_Winner = (S) => 
+        {
+        let countA=0,countD=0;
+        for(let i=0;i< S.length;i++){
+            if(S[i]==="A")
+                countA=countA+1;
+            else if(S[i]==="D")
+                countD=countD+1;
+        }
+        if (countA > countD)
+            return "Aditya";
+        
+        else if (countA < countD)
+            return "Danish";
+        
+        else
+            return "Draw";
+        }
+         
+    </pre>
+
+    <h2>Join Strings</h2> 
+    <pre>
+        const joinStrings = (S, P) => 
+        {
+            let concatenatedString=S+P;
+            return concatenatedString;
+        };
+         
+    </pre>
+
+    <h2>Plaindrome Check</h2> 
+    <pre>
+        var Palin_Check = (str) =>
+        {
+	        let s="";
+	        for(let i=str.length-1;i>=0;i--){
+	            s=s+str[i];
+	        }
+	        if (str===s){
+	            return "True";
+	        }
+	        else{
+	            return "False";
+	        }
+        }
+         
+    </pre>
+
+    <h2>Reverse the String</h2>
+    <pre>
+        var Reverse_String = (str) => 
+        {
+            let reverseString="";
+            for(let i=str.length-1; i>=0; i--){
+                reverseString=reverseString+str[i]; 
+            }
+            return reverseString;   
+        };
+    </pre>
+
+    <h2>Match the Strings</h2>
+    <pre>
+        var String_Match = (S1,S2) => 
+        {
+            if(S1===S2){
+                return "YES";
+            }   
+            else{
+                return "NO";
+            }
+        };
+ 
+    </pre>
+
+
+    <h2>String Replace</h2>
+    <pre>
+        var Replace = (S, pattern , text) => 
+        {
+            let S1="";
+            S1=S.replace(pattern, text);
+            return S1;
+
+        };
+    </pre>
+
+    <h2>Split the String</h2>
+    <pre>
+        var Split_the_string = (S) => 
+        {
+            let ar=S.split(" ");
+            return ar;
+        };
+    </pre>
+
+    <h2>Count the Vowels and Consonants</h2>
+    <pre>
+        var Count_Vowels= (S) => 
+        {
+        let vowelCount = 0;
+        S.toLowerCase();
+            for(let i=0;i< S.length;i++){
+                if(S[i]==="a" || S[i]==="e"|| S[i]==="i"|| S[i]==="o"||S[i]==="u"){
+                    vowelCount = vowelCount+1;
+                }
+            }
+            return vowelCount;
+        };
+
+        var Count_Consonants= (S) => 
+        {
+            let consonentCount = 0;
+            S.toLowerCase();
+            for(let i=0;i< S.length;i++){
+                if(S[i]==="a" || S[i]==="e"|| S[i]==="i"|| S[i]==="o"||S[i]==="u"){
+                }
+                else{
+                    consonentCount=consonentCount+1;
+                }
+            }
+            return consonentCount; 
+        };
+ 
+    </pre>
+</body>
+</html>
