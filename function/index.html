@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNCTIONS</title>
+</head>
+<body style="background-color: rgb(5, 5, 5); color: rgb(5, 228, 27); margin-left: 37px;">
+    <h1 style="text-align: center; text-decoration: underline;">JS Coding Assignments- Function</h1>
+
+    <h2> Create one function with zero parameter having a console statement.</h2>
+    <pre>
+        function hello(){
+            console.log(hello);
+        }
+        hello();
+    </pre>
+
+    <h2>Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"</h2>
+    <pre>
+        function add(n1,n2){
+            let res= n1+n2;
+             console.log("Sum of "+n1+", "+n2+" is "+ res);
+            }
+           add(3,4);
+    </pre>
+
+    <h2>Create one arrow function</h2>
+    <pre>
+        const div = (a,b) => {
+            console.log(a/b);
+        }
+        div(4,2);
+    </pre>
+
+    <h2>Print the output:</h2>
+    <pre>
+        var x = 21;
+        var girl = function() {
+            console.log(x);
+            var x = 20;
+        };
+        girl();
+    </pre>
+    <p>output is ----undefined <br>
+        because the var x declared in the girl function creates a new variable x containing 20, which nullify its meaning inside the function. 
+    </p>
+
+    <h2>Print Output:</h2>
+    <pre>
+        var x = 21;
+        girl();
+        console.log(x)
+        function girl(){
+            console.log(x);
+            var x =20;
+        };
+    </pre>
+    <p>output is -----21 <br>
+        because when the function is called the flow of control will go to girl() there console.log(x) will go to temporal dead zone, <br>then a new variable is declared which makes it void inside the function. after this the flow will go back to the line  <br> after girl() and prints the value of x as 21.
+    </p>
+
+    <h2>Print output:</h2>
+    <pre>
+        var x = 21;
+        a();
+        b();
+
+        function a(){
+            x=20;
+            console.log(x);
+        };
+        function b(){
+            x = 40;
+            console.log(x);
+        };
+    </pre>
+    <p>output is ----- 20 40 <br>
+    the new values of a and b after function call is 20 and 40.</p>
+
+    <h2>Write a function that accepts parameter n and returns factorial of n</h2>
+    <pre>
+        function factorial(n){
+            if (n===0){
+              return 1;
+            }
+            else{
+              return n*factorial(n-1);
+            }
+            
+          }
+          console.log(factorial(5));
+
+          //this code outputs 120.
+    </pre>
+
+
+    <h2>Guess the Output</h2>
+    <pre>
+        function FindSum(a,b){
+            return a+b;
+        }
+
+        function DisplayData(data,batch){
+            console.log(`i am from ${data} and My batch is EA${batch}`)
+        }
+
+        DisplayData("PrepBytes", FindSum(10,9));
+    </pre>
+    <p>output is------i am from PrepBytes and My batch is EA19
+        because when DisplayData is called with two arguments PrepBytes and FindSum,<br> the control will first go to the DisplayData function definition with data and batch as parameters and prints the ${data} as PrepBytes and for ${data} <br> the control will go to the FindSum funcion definition and returns a+b to ${batch} and hence the output.
+    </p>
+
+
+    <h2>Guess the Output</h2>
+    <pre>
+        Abc();
+        const Abc = function(){
+            let value = 20;
+            console.log(value);
+        }
+    </pre>
+    <p>output is ----ReferenceError: Cannot access 'Abc' before initialization
+        because const and let cannot be accessed before initialization.
+    </p>
+
+    <h2>Guess the Output</h2>
+    <pre>
+        const greet = function(name){
+            return function(m){
+                console.log(`Hi!! ${name}, ${m}`);
+            }
+        }
+
+        const greet_message = greet('EA19');
+        greet_message("Welcome To PrepBytes")
+    </pre>
+    <p>output is----Hi!! EA19, Welcome To PrepBytes <br> because when the greet_message is read, the flow will go to const greet to read name function which is returning m function where- ${name} will access greet that is EA19  and ${m} will have welcome to prepbytes stored in greet_message</p>
+</body>
+</html>
