@@ -57,8 +57,8 @@
             var x =20;
         };
     </pre>
-    <p>output is -----21 <br>
-        because when the function is called the flow of control will go to girl() there console.log(x) will go to temporal dead zone, <br>then a new variable is declared which makes it void inside the function. after this the flow will go back to the line  <br> after girl() and prints the value of x as 21.
+    <p>output is -----undefined 21 <br>
+        because  when the code runs the girl() will execute first (accessing before declaring) and prints undefined, then flow of control<br> will come out the function and runs and prints 21
     </p>
 
     <h2>Print output:</h2>
