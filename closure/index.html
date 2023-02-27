@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <h1>JS Coding Assignment-Closures</h1>
+
+    <h2>
+        question1-
+        <pre>
+        function counter(){
+        var counter = 0;
+    
+        function IncreaseCounter() {
+            return counter += 1;
+        };
+    
+        return IncreaseCounter;
+        }
+    
+        var counter = counter();
+        alert(counter());
+        alert(counter());
+        alert(counter());
+        alert(counter());</pre></h2>
+    
+        <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output:
+            1
+            2
+            3
+            4
+        
+        &nbsp;&nbsp;&nbsp;because when the function counter is invoked, the control will first assign counter value as 0,then the flow encounters another (inside) function named <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;IncreaseCounter here the control will return the counter value which is increemented by 1. Then flow of control will come out of the function and<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;calls the counter() 4 times, resuting the above output.
+    </pre>
+
+    <h2> question2-
+        <pre>
+        let count = 0;
+        (function () {
+            if (count === 0) {
+                let count = 1;
+                console.log(count); // What is logged?
+            }
+        console.log(count); // What is logged?
+        })();
+        </pre>
+    </h2>
+
+    
+        <pre>
+            Output is-
+            1
+            0
+        
+        because when control assigns the 0 to count variable(global variable), function() will be invoked which is an IIFE(Immediately Invoked Function Execution), 
+        so first control will check whether count value is equal to 0 or not, here it is true, so it will go inside the if block, there count is reassingned 
+        so the reassingned value of count will be considered and the control will print the reassigned value that is 1. Now the control will come out of the 
+        if block, then again there is a print statement,so this stmt will print count value as 0, since count is 0(from global scope)
+    </pre>
+
+    <h2>question3-
+        <pre>
+            for (var i = 0; i < 3; i++) {
+                setTimeout(function log() {
+                  console.log(i); // What is logged?
+                }, 1000);
+              }
+        </pre>
+    </h2>
+
+    
+            <pre>           Output is- 
+                    3
+                    3
+                    3 
+        
+        because when the control runs the for loop with var keyword, for all the 3 iteration, it will print 3(3 times) after 1000ms that is 1s, 
+        because setTimeout funtion prints the result after the specified time (delay).
+    </pre>
+
+    <h2>question4-<pre>
+        Write a code to calculate area of a rectangle using inner function. In this case outer function should accept 
+        parameter length and inner function should accept parameter breadth.</h2></pre>
+   
+        <pre>
+            function length(length) {
+                function breadth(breadth) {
+                  return length * breadth;
+                }
+                return breadth;
+              }
+
+              const areaOfRectangle = length(20);
+              console.log("Area of Rectangle is: "+areaOfRectangle(10));
+        
+            output--
+            Area of Rectangle is: 200
+        <br>
+            here length() is having a length as a parameter(outer function), which returns breadth as a result of inner function breadth having breadth as a parameter,
+            multiples length and breadth. So, when length function is called with 20 as an argument, the value gets stored in the areaOfRectangle varible, which then 
+            passess 10 as an argument, which is taken by the inside function breadth, which then multiples length and breadth, resulting breadth to the outer function
+            which then prints the value 200 as the areaOfRectangle.
+        </pre>
+    <h2>question5-
+        Take a variable in outer function and create an inner function to increase the counter every time it is called</h2>
+    <pre>
+        function outer(){
+            let counter = 0;
+        
+            function inner() {
+                return counter += 1;
+            };
+        
+            return inner;
+        }
+        
+        let counter =outer();
+        console.log(counter());
+        console.log(counter());
+        console.log(counter());
+        console.log(counter());
+    </pre>
+    <p>Output is-
+        <pre>
+            1
+            2
+            3
+            4
+        
+        because when the function outer is invoked, the control will first assign counter value as 0,then the flow encounters another (inside) function named inner here 
+        the control will return the counter value which is increemented by 1. Then flow of control will come out of the function and calls the counter() 4 times, resuting
+        the above output.
+    </pre>
+
+    <h2>question6- 
+        Print Output
+        <pre>            var a = 12;
+            (function () {
+              alert(a);
+            })();
+        </pre>
+    </h2><pre>
+    Output is--
+        12
+        because when this anonymous function is called, the value of a is printed as 12, which is declared outside the function.
+    </pre>
+
+    <h2>question7- 
+        Print the output
+        <pre>
+        var a = 10;
+        var x = (function () {
+          var a = 12;
+          return function () {
+            alert(a);
+          };
+        })();
+        x();
+        </pre>
+    </h2>
+    <pre>       Output is--
+        12
+        because when this anonymous function is called, the value of a is printed as 12, which is declared inside the function. To anonymous function which is assigned to 
+        var x.
+    </pre>
+
+    <h2>question8-
+        Print the output--
+        <pre>
+            var globalVar = "xyz";
+
+            (function outerFunc(outerArg) {
+                var outerVar = 'a';
+                
+                (function innerFunc(innerArg) {
+                var innerVar = 'b';
+                
+                console.log(
+                    "outerArg = " + outerArg + "\n" +
+                    "innerArg = " + innerArg + "\n" +
+                    "outerVar = " + outerVar + "\n" +
+                    "innerVar = " + innerVar + "\n" +
+                    "globalVar = " + globalVar);
+                
+                })(456);
+            })(123);
+        </pre>
+    </h2>
+
+    <pre>            Output is-
+        
+            outerArg = 123
+            innerArg = 456
+            outerVar = a
+            innerVar = b
+            globalVar = xyz
+        
+        because, here the outer function is outerFunc with the argument as 123, then innerFunc is passed with an argument 456, then outerVar is assigned to 'a' 
+        in the outer function, then innerVar is assigned to 'b' in inner function, then the global variable is globalVar as "xyz" declared before the function. 
+    </pre>
+</body>
+</html>
