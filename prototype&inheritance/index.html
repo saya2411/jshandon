@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype and inheritance</title>
+</head>
+<body>
+    <h1>JS Coding Assignment-Prototype and Inheritance</h1>
+
+    <pre>
+    <strong>Question1-Create 2 objects - parent and child. Attach methods to parent and use those methods in child object 
+    using parents prototype</strong>
+
+    let parent={
+        greet : function(){
+            console.log("Good Evening");
+        }
+    }
+    let child=Object.create(parent);
+    console.log(child);
+    child.greet();
+
+    explanation-
+    code creates an object parent with a method greet, and an object child created using the Object.create method that inherits from parent.
+    When console.log(child) is called, it will output an empty object, as child has no properties of its own. However, it inherits the greet 
+    method from its prototype parent.
+    When child.greet() is called, it will invoke the greet method from its prototype parent, which will log "Good Evening" to the console.
+</pre>
+
+
+<pre>
+    <strong>Question2-Write code to explain prototype chaining</strong>
+    function print(num){
+        return new Promise((resolve)=>{
+            setTimeout(()=>{
+                 console.log(num);
+                 resolve()
+             },1000)
+         })
+      }
+      print(1) 
+      .then(()=>print(2))
+      .then(()=>print(3))
+      .then(()=>print(4))
+      .then(()=>print(5))
+      .then(()=>print(6))
+      .then(()=>print(7))
+
+    explanation-
+    here multiple .then methods are used which indicates prototype chaining. The code calls print(1) and 
+    chains a series of then() methods that each call print() with a new number once the previous Promise resolves.
+    This creates a sequence of delayed console logs that will execute in order.
+</pre>
+
+<pre>
+    <strong>Question3-Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate 
+    sum for multiple arrays</strong>
+
+    Array.prototype.sum = function() {
+    return this.reduce((acc, curr) => acc + curr, 0);
+    };
+
+    let arr1 = [1, 2, 3];
+    let arr2 = [4, 5, 6];
+    let arr3 = [7, 8, 9];
+
+
+    let sum1 = arr1.sum();
+    let sum2 = arr2.sum();
+    let sum3 = arr3.sum();
+
+
+    console.log(sum1); 
+    console.log(sum2); 
+    console.log(sum3); 
+
+    explanation-
+    here we are creating array prototype with sum method. Then creating arrays for calculation. then calculating sum for each array using that 
+    sum method and printing the results.
+</pre>
+
+<pre>
+    <strong>Question4-Write a JavaScript function to retrieve all the names of object's own and inherited properties.</strong>
+    function retrieveAll(){
+        const obj = {
+          a: 1,
+          b: 2,
+          c: 3
+        };
+        console.log(Object.getOwnPropertyNames(obj));
+        let proto=Object.getPrototypeOf(obj);
+        console.log(proto);
+        }
+        retrieveAll()
+    explanation-
+    This function retrieveAll() creates an object object1 with three properties a, b, and c. It then uses the Object.getOwnPropertyNames() 
+    method to retrieve an array of property names for the object1 object and logs it to the console.
+    Next, it retrieves the prototype of the object1 object using Object.getPrototypeOf() and logs it to the console.
+</pre>
+</body>
+</html>
